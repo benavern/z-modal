@@ -1,47 +1,8 @@
-/*================
-	RESET
-==================*/
-
-*, *:before, *:after{
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
-}
-h1, h2, h3, h4, h5, h6, p, ol, ul, li{
-	margin:0.5em 0;
-	display:block;
-}
-li{
-	display:list-item;
-}
-ul, ol{
-	margin-left:2rem;
-}
-
-html{
-	font-size:18px;
-}
-html *{
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-body{
-	font-family:sans-serif;
-	font-size:1rem;
-	line-height:1.6;
-}
-
-
-
-body{
-	height:2000px;
-}
-
-
-
-
-/*MODAL*/
+/**
+ * Z-MODAL
+ * By Benjamin Caradeuc (benjamin@caradeuc.info)
+ * benavern.github.io
+**/
 
 /*Positioning & overlay*/
 .z-modal div{
@@ -50,6 +11,7 @@ body{
 	box-sizing: border-box;
 }
 
+/*overlay*/
 .z-modal{
 	position: fixed;
 	top:0;
@@ -58,6 +20,7 @@ body{
 	right:0;
 	background: rgba(0, 0, 0, 0.7);
 	z-index:9999;
+	cursor:pointer;
 }
 
 /*the box*/
@@ -74,9 +37,10 @@ body{
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 
-	box-shadow: 0 0 100px 10px rgba(0,0,0, 0.3);
+	box-shadow: 0 0 50px rgba(0,0,0, 0.3);
 	overflow:hidden;
 	border-radius:5px;
+	cursor:auto;
 }
 
 /*box header*/

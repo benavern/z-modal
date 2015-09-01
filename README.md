@@ -4,8 +4,4 @@ This tool allows you to create beautiful & customisable modals easily with callb
 
 ## Todo
 
-* open (className(animations), title, content, closeBtn, btn(half?))
-* close (callback)
-* animations ??
-
-* FIX THE CLOSE BUTTON !!!
+* explaination on the demopage, this readme && make a blogpost
