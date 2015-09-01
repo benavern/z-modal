@@ -111,7 +111,6 @@ body{
 .z-modal .z-modal-box .z-modal-footer{
 	position:relative;
 	font-size:0;
-	background: #ddd;
 }
 .z-modal .z-modal-box .z-modal-footer .z-modal-btn{
 	width:100%;
@@ -119,6 +118,9 @@ body{
 	padding:1rem;
 	text-align:center;
 	cursor:pointer;
+	background: #ddd;
+	border-top:1px white solid;
+	border-right:1px white solid;
 }
 .z-modal .z-modal-box .z-modal-footer .z-modal-btn:hover{
 	background: #aaa;
