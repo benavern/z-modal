@@ -8,7 +8,4 @@ This tool allows you to create beautiful & customisable modals easily with callb
 * close (callback)
 * animations ??
 
-
-## Inspiration
-
-<!-- help : https://scotch.io/tutorials/building-your-own-javascript-modal-plugin -->
+* FIX THE CLOSE BUTTON !!!

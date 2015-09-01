@@ -2,7 +2,7 @@
 	RESET
 ==================*/
 
-/**, *:before, *:after{
+*, *:before, *:after{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
@@ -20,7 +20,7 @@ ul, ol{
 
 html{
 	font-size:18px;
-}*/
+}
 html *{
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -119,15 +119,13 @@ body{
 	text-align:center;
 	cursor:pointer;
 	background: #ddd;
-	/*border-top:1px white solid;
-	border-right:1px white solid;*/
 }
 .z-modal .z-modal-box .z-modal-footer .z-modal-btn:hover{
 	background: #aaa;
 	color:white;
 }
 
-.z-modal .z-modal-box .z-modal-footer .z-modal-btn.half{
+.z-modal .z-modal-box .z-modal-footer .z-modal-btn.z-modal-btn-half{
 	width:50%;
 	display:inline-block;
 }
