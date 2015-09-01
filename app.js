@@ -11,17 +11,21 @@
 
     // global element
     this.closeBtn = null;
+    this.modal = null;
+    this.btns = [];
 
     // defaults options
     var defaults = {
       className : "",
       title : "Z-MODAL",
-      content : '<p>Thank you for using Z-Modal plugin.</p>\
+      content : '<h1>Congratulations!!!</h1>\
+                <p>You are using the realy awesome Z-Modal javascript plugin. <b>Thank You!</b></p>\
                 <p>Author: <a href="http://caradeuc.info/">Benjamin Caradeuc</a></p>',
       closeBtn : true,
 
-      btn : [
-        { label: "ok", half: false, close: true, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
+      buttons : [
+        { label: "Cancel", half: true, callback: function(){alert('coucou!');} },
+        { label: "ok", half: true, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
       ]
     }
 
@@ -32,12 +36,13 @@
   }
 
 
-  // fonctions privées
+  /*============================================================================
+   fonctions privées
+  */
 
+  // create the options object
   function __createOptions(defaults, props){
-      // create the options object
-
-      var opt = defaults;
+      var opt = defaults; // the options to return
       for (var prop in props){
         if (props.hasOwnProperty(prop)) {
           opt[prop] = props[prop];
@@ -46,21 +51,123 @@
       return opt;
   }
 
+  // build the html markup
   function __build() {
+    /**
+     * If content is a string, append it.
+     * If content is a Dome node, append its content.
+     */
+    var theContent;
+    if (typeof this.options.content === "string") {
+      theContent = this.options.content;
+    } else {
+      theContent = this.options.content.innerHTML;
+    }
+
+    // modal element creation
+    this.modal = document.createElement("div");
+    this.modal.className = "z-modal " + this.options.className;
+
+    // the box
+    var box = document.createElement("div");
+    box.className = "z-modal-box";
+    this.modal.appendChild(box);
+
+      // the box header (title - closeBtn)
+      var header = document.createElement("div");
+      header.className = "z-modal-header";
+        // title
+        var title = document.createElement("div");
+        title.className = "z-modal-title";
+        title.innerHTML = this.options.title;
+        header.appendChild(title);
+        // closeBtn
+        if(this.options.closeBtn === true){
+          this.closeBtn = document.createElement("div");
+          this.closeBtn.className="z-modal-close";
+          this.closeBtn.innerHTML = "&#215;"
+          header.appendChild(this.closeBtn)
+        }
+
+      // the box content
+      var content = document.createElement("div");
+      content.className="z-modal-content";
+      content.innerHTML = theContent;
+
+      // the box footer
+      var footer = document.createElement("div");
+      footer.className="z-modal-footer";
+        // the buttons
+        for(var i=0; i<this.options.buttons.length; i++){
+          var _this = this;
+          // closure...
+          (function(i) {
+            var theBtn = _this.options.buttons[i];
+            var btn = document.createElement("div");
+            btn.className = "z-modal-btn";
+            btn.innerHTML = theBtn.label;
+            if(theBtn.half === true){
+              btn.className += " half";
+            }
+            // listeners
+            __initListener(btn, "click", function(){
+              _this.close( _this.options.buttons[i].callback);
+            })
+            footer.appendChild(btn);
+          })(i);
+        }
+
+    // populate the box
+    box.appendChild(header);
+    box.appendChild(content);
+    box.appendChild(footer);
+
+    // add the modal to the dom !!!
+    document.body.appendChild(this.modal)
 
   }
 
-  // fonctions publiquesS
+  function __initListener(node, type, func){
+    var _this = this;
+    node.addEventListener(type, function() {
+      _this.close(func);
+    }, false);
+  }
+
+
+
+
+  /*============================================================================
+   fonctions publiques
+  */
 
   this.ZMODAL.prototype.open = function() {
-    __build()
+    __build.call(this)
   }
-  this.ZMODAL.prototype.close = function() {
-    __build()
+  this.ZMODAL.prototype.close = function(callback) {
+    console.log('Methode "close" not implemented yet!')
+    // execute the callback function...
+    callback();
   }
 
 
 }());
 
 
-var test = new ZMODAL({title : "coucou", truc : "hhé"});
+
+
+/*============================================================================
+ Tests .....
+*/
+
+var test,
+    modalArgs = {
+      // title: "Coucou!",
+      // content : "<p>Bonjour le monde!</p>"
+    };
+var btnTest = document.getElementById('test');
+btnTest.addEventListener('click', function(e){
+  e.preventDefault();
+  test = new ZMODAL(modalArgs);
+  test.open()
+})
