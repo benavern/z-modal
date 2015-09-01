@@ -1,0 +1,131 @@
+/*================
+	RESET
+==================*/
+
+/**, *:before, *:after{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p, ol, ul, li{
+	margin:0.5em 0;
+	display:block;
+}
+li{
+	display:list-item;
+}
+ul, ol{
+	margin-left:2rem;
+}
+
+html{
+	font-size:18px;
+}*/
+html *{
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body{
+	font-family:sans-serif;
+	font-size:1rem;
+	line-height:1.6;
+}
+
+
+
+body{
+	height:2000px;
+}
+
+
+
+
+/*MODAL*/
+
+/*Positioning & overlay*/
+.z-modal div{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.z-modal{
+	position: fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index:9999;
+}
+
+/*the box*/
+.z-modal .z-modal-box{
+	background: #fff;
+	min-width:250px;
+	min-height:125px;
+	max-width:100%;
+	max-height:100%;
+
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+	box-shadow: 0 0 100px 10px rgba(0,0,0, 0.3);
+	overflow:hidden;
+	border-radius:5px;
+}
+
+/*box header*/
+.z-modal .z-modal-box .z-modal-header{
+	background: #ddd;
+	position:relative;
+}
+.z-modal .z-modal-box .z-modal-header .z-modal-title{
+	padding:1rem 4rem 1rem 2rem;
+	font-weight:bold;
+}
+.z-modal .z-modal-box .z-modal-header .z-modal-close{
+	padding:1rem 1.5rem;
+	position:absolute;
+	top:0;
+	right:0;
+}
+.z-modal .z-modal-box .z-modal-header .z-modal-close:hover{
+	color:white;
+	background: #E22;
+	cursor: pointer;
+}
+
+/*box content*/
+.z-modal .z-modal-box .z-modal-content{
+	position:relative;
+	padding:1rem 2rem;
+}
+
+
+/*box footer*/
+.z-modal .z-modal-box .z-modal-footer{
+	position:relative;
+	font-size:0;
+	background: #ddd;
+}
+.z-modal .z-modal-box .z-modal-footer .z-modal-btn{
+	width:100%;
+	font-size:1rem;
+	padding:1rem;
+	text-align:center;
+	cursor:pointer;
+}
+.z-modal .z-modal-box .z-modal-footer .z-modal-btn:hover{
+	background: #aaa;
+	color:white;
+}
+
+.z-modal .z-modal-box .z-modal-footer .z-modal-btn.half{
+	width:50%;
+	display:inline-block;
+}
