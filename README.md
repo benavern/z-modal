@@ -5,3 +5,6 @@ This tool allows you to create beautiful & customisable modals easily with callb
 ## Todo
 
 * explaination on the demopage, this readme && make a blogpost
+
+
+![coucou](/screenshot.jpg)

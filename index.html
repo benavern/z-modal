@@ -2,17 +2,64 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Z-MODAL</title>
+	<title>Z modal</title>
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+	<link rel="stylesheet" href="http://labo.caradeuc.info/z-grid/css/z-grid.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="highlight.js/monokai_sublime.css">
 	<link rel="stylesheet" href="z-modal/z-modal.css">
-
 </head>
 <body>
-	
-	<button class="btn" id="test">Show me a modal please !</button>
+
+	<header style="background-image: url(banner.jpg);">
+		<a href="http://labo.caradeuc.info/" class="back">LABO</a>
+	</header>
+
+	<section>
+		<div class="wrap">
+			<h1 class="big-title">Z-Modal</h1>
+			<small>03 sept 2015</small>
+			<div class="z-grid">
+				<div class="z-2">
+					<div class="z-box center-text"><a href="z-modal" class="download">Download</a></div>
+				</div>
+				<div class="z-2">
+					<div class="z-box center-text"><a href="z-modal" class="github">Github</a></div>
+				</div>
+			</div>
+			<h1>Test #1</h1>
+			<button class="btn" id="demo1">Show me a modal please !</button>
+			<pre><code class="Javascript">var bonjour = alert('ah ah !');</code></pre>
+		</div>
+	</section>
+
+	<footer>
+		<div class="wrap">
+			<div class="z-grid">
+				<div class="z-2">
+					<div class="z-box center-text">
+						<h3>Share my work</h3>
+						<div id="social-wrapper"></div>
+					</div>
+				</div>
+				<div class="z-2">
+					<div class="z-box center-text">
+						Made with <span class="heart">&heartsuit;</span> by <a href="http://caradeuc.info">Benjamin Caradeuc</a>
+						<br>
+						<a href="http://labo.caradeuc.info">My laboratory</a>
+						<br>
+						<a href="http://portfolio.caradeuc.info">My portfolio</a>
+							<br>
+						<a href="mailto:benjamin@caradeuc.info">Contact me</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<script src="js/app.js"></script>
+	<script src="highlight.js/highlight.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 	<script src="z-modal/z-modal.js"></script>
-
 </body>
 </html>

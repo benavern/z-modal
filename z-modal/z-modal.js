@@ -125,7 +125,7 @@
   function __initListener(node, type, func, noDeep){
     var _this = this;
     node.addEventListener(type, function(e) {
-      e.preventDefault();
+      // e.preventDefault();
       if(noDeep === true){
         if(e.target == this){
           func();
