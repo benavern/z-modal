@@ -128,12 +128,21 @@ section{
 }
 
 pre code{
-
   padding:1rem 2rem!important;
   margin:1rem 0;
   line-height: 2rem;
+  border-left: 5px #aaa solid;
+  border-radius:3px;
 }
 
+hr{
+  display:block;
+  height:2px;
+  border:none;
+  border-radius: 1px;
+  background: #ddd;
+  margin:2rem;
+}
 
 
 
@@ -147,16 +156,30 @@ footer a{
   color: white;
 }
 
+.social-wrapper{
+  position:relative;
+  width:100%;
+  font-size: 0;
+}
+
 .social-btn{
   position:relative;
   display: inline-block;
-  padding: 0.5em 1.2em ;
+  width:25%;
+  height:0;
+  padding-bottom:25%;
   color: white;
   font-weight: bold;
   font-size: 2rem;
   z-index: 1;
   transform: scale(1);
   transition: all 0.3s;
+}
+.social-btn:before{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
 }
 .social-btn:hover{
   text-decoration: none;
@@ -181,7 +204,7 @@ footer a{
   background: #dd4b39;
 }
 .social-btn.g:before{
-  content:"g";
+  content:"g+";
 }
 
 .social-btn.m{
@@ -203,9 +226,16 @@ footer a{
 
 @media (max-width: 768px){
   header{
-    height: 25vh;
+    height: 35vh;
   }
   header .back{
     font-size: 0.8rem;
   }
+  section{
+    padding:1rem 0;
+  }
+  pre code{
+    padding:0.5rem !important;
+  }
+
 }

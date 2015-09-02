@@ -28,7 +28,5 @@ var modalArgs = {};
 var btnTest = document.getElementById('demo1');
 
 btnTest.addEventListener('click', function(e){
-  e.preventDefault();
   demo = new ZMODAL(modalArgs);
-  demo.open()
 })
