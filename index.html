@@ -28,9 +28,21 @@
 				</div>
 			</div>
 			<hr>
-			<h1>Test #1</h1>
+
+			<h1>What is z-modal?</h1>
+			<p>Z-modal is a little javascript plugin that allows you create stylish modals. You will be able to put texts or html in the modals content and customize the title and the buttons.</p>
+			<p>It is written in vanillaJs, so that you don't need any third party libraries or frameworks.</p>
+
+			<hr>
+			<h1>Default behaviour:</h1>
+			<p>Without any options, here is the default behaviour of the plugin:</p>
 			<button class="btn" id="demo1">Show me a modal please !</button>
-			<pre><code class="Javascript">var demo;<br>var modalArgs = {};<br>var btnTest = document.getElementById('demo1');<br>btnTest.addEventListener('click', function() {<br>  demo = new ZMODAL(modalArgs);<br>})</code></pre>
+			<pre><code class="Javascript">var btnTest = document.getElementById('demo1');<br>var demo;<br>btnTest.addEventListener('click', function() {<br>  demo = new ZMODAL();<br>})</code></pre>
+
+			<hr>
+			<h1>The options</h1>
+			<p>The plugin's options are written in a javascript object, they will overwrite the default settings.</p>
+			ul>li*6>(b{option$})+{: Lorem}
 		</div>
 	</section>
 
@@ -39,8 +51,8 @@
 			<div class="z-grid">
 				<div class="z-2">
 					<div class="z-box center-text">
-						<h3>Share my work</h3>
-						<div id="social-wrapper" class="social-wrapper"></div>
+						<h3>Share my work via...</h3>
+						<div class="social-wrapper"></div>
 					</div>
 				</div>
 				<div class="z-2">
