@@ -25,8 +25,11 @@
         { label: "ok", half: false, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
       ]
     }
+
     if(arguments[0] && typeof arguments[0] === "object"){
       this.options = __createOptions(defaults, arguments[0]);
+    }else{
+        this.options = defaults;
     }
     if(this.options.autoload === true){
       this.open.call(this);

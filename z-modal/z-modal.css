@@ -35,7 +35,8 @@
 	top:50%;
 	left:50%;
 	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
 
 	box-shadow: 0 0 50px rgba(0,0,0, 0.3);
 	overflow:hidden;
@@ -49,10 +50,12 @@
 	position:relative;
 }
 .z-modal .z-modal-box .z-modal-header .z-modal-title{
+	padding:16px 64px 16px 32px;
 	padding:1rem 4rem 1rem 2rem;
 	font-weight:bold;
 }
 .z-modal .z-modal-box .z-modal-header .z-modal-close{
+	padding:16px 24px;
 	padding:1rem 1.5rem;
 	position:absolute;
 	top:0;
@@ -67,6 +70,7 @@
 /*box content*/
 .z-modal .z-modal-box .z-modal-content{
 	position:relative;
+	padding:16px 32px;
 	padding:1rem 2rem;
 }
 
@@ -78,7 +82,9 @@
 }
 .z-modal .z-modal-box .z-modal-footer .z-modal-btn{
 	width:100%;
+	font-size:16px;
 	font-size:1rem;
+	padding:16px;
 	padding:1rem;
 	text-align:center;
 	cursor:pointer;

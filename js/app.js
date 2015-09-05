@@ -1,6 +1,7 @@
 (function() {
   createSocialLinks();
   demo1();
+  demo2();
 })();
 
 // social links made easy
@@ -26,13 +27,28 @@ function createSocialLinks() {
 
 }
 
+
+
 // demos for z-modal plugin
 
-function demo1(){
-  var demo;
-  var modalArgs = {};
+function demo1() {
   var btnTest = document.getElementById('demo1');
-  btnTest.addEventListener('click', function(e){
-    demo = new ZMODAL(modalArgs);
+  var demo;
+  btnTest.addEventListener('click', function(){
+    demo = new ZMODAL();
   })
+}
+
+function demo2() {
+  var btndemo2 = document.getElementById('demo2');
+  var demo2;
+  var options2 = {
+    title : "Demo 2",
+    content : 'You can close the modal by clicking the overlay...',
+    closeBtn : false,
+    buttons : []
+  };
+  btndemo2.addEventListener('click', function(){
+    demo = new ZMODAL(options2);
+  });
 }

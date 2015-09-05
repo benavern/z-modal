@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="http://labo.caradeuc.info/z-grid/css/z-grid.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="highlight.js/monokai_sublime.css">
-	<link rel="stylesheet" href="z-modal/z-modal.css">
+	<link rel="stylesheet" href="z-modal/z-modal.min.css">
 </head>
 <body>
 
@@ -17,8 +17,10 @@
 
 	<section>
 		<div class="wrap">
+
+
 			<h1 class="big-title">Z-Modal</h1>
-			<small>03 sept 2015</small>
+			<small>05 sept 2015</small>
 			<div class="z-grid">
 				<div class="z-2">
 					<div class="z-box center-text"><a href="z-modal" class="download">Download</a></div>
@@ -27,14 +29,13 @@
 					<div class="z-box center-text"><a href="z-modal" class="github">Github</a></div>
 				</div>
 			</div>
-			<hr>
 
 			<h1>What is z-modal?</h1>
 			<p>Z-modal is a little javascript plugin that allows you create stylish modals. You will be able to put texts or html in the modals content and customize the title and the buttons.</p>
 			<p>It is written in vanillaJs, so that you don't need any third party libraries or frameworks.</p>
 
 			<hr>
-			<h1>Default behaviour:</h1>
+			<h1>Default behaviour</h1>
 			<p>Without any options, here is the default behaviour of the plugin:</p>
 			<button class="btn" id="demo1">Show me a modal please !</button>
 			<pre><code class="Javascript">var btnTest = document.getElementById('demo1');<br>var demo;<br>btnTest.addEventListener('click', function() {<br>  demo = new ZMODAL();<br>})</code></pre>
@@ -42,7 +43,43 @@
 			<hr>
 			<h1>The options</h1>
 			<p>The plugin's options are written in a javascript object, they will overwrite the default settings.</p>
-			ul>li*6>(b{option$})+{: Lorem}
+			<ul>
+				<li><b>title</b>: (Default: "Z-MODAL") This is the title that will be inserted in the modal header section.</li>
+				<li><b>content</b>: Here you can use a string or an html node that will be inserted as a content in the modal.</li>
+				<li><b>closeBtn</b>: (Default: true) This is a boolean witch is used to say if the "close" button will appear.</li>
+				<li><b>buttons</b>: The array of objects representing the buttons that will be displayed at the bottom of the modal. There are options for that too:
+					<ul>
+						<li><b>label</b>: The text that will be displayed inside the button</li>
+						<li><b>half</b>: (Default: false) Used to decide if the button is 100% or 50% wide</li>
+						<li><b>callback</b>: A function that will fire after clicking the button (the modal will always close automatically!) </li>
+					</ul>
+				</li>
+				<li><b>className</b>: (Default: "") Add here some classNames if you want to apply some more styles. [SPACE separated]</li>
+				<li><b>autoload</b>: (Default: true) Tells the plugin to open the modal automatically or to open on the method call</li>
+			</ul>
+
+			<hr>
+			<h1>Javascript methods</h1>
+			<p>I have exposed 2 methodes: </p>
+			<ul>
+				<li><b>ZMODAL.open()</b>: This will be used just if the "autoload" option is setted at "false"</li>
+				<li><b>ZMODAL.close(callback)</b>: Here, You are able to close the modal and apply a callback (must be a function)</li>
+			</ul>
+
+			<hr>
+			<h1>Exemples</h1>
+
+			<h3>Without buttons and without closebtn</h3>
+			<button id="demo2">Show me!</button>
+			<pre><code class="javascript">var btndemo2 = document.getElementById('demo2');<br>var demo2;<br>var options2 = {<br>  title : "Demo 2",<br>  content : 'You can close the modal by clicking the overlay...',<br>  closeBtn : false,<br>  buttons : []<br>};<br>btndemo2.addEventListener('click', function() {<br>  demo = new ZMODAL(options2);<br>});</code></pre>
+
+			<h3>with html inside and using open method</h3>
+			<button id="demo3">Show me!</button>
+			<pre><code class="javascript">var coucou;</code></pre>
+
+
+
+
 		</div>
 	</section>
 
@@ -58,12 +95,9 @@
 				<div class="z-2">
 					<div class="z-box center-text">
 						Made with <span class="heart">&heartsuit;</span> by <a href="http://caradeuc.info">Benjamin Caradeuc</a>
-						<br>
-						<a href="http://labo.caradeuc.info">My laboratory</a>
-						<br>
-						<a href="http://portfolio.caradeuc.info">My portfolio</a>
-							<br>
-						<a href="mailto:benjamin@caradeuc.info">Contact me</a>
+						<br><a href="http://labo.caradeuc.info">My laboratory</a>
+						<br><a href="http://portfolio.caradeuc.info">My portfolio</a>
+						<br><a href="mailto:benjamin@caradeuc.info">Contact me</a>
 					</div>
 				</div>
 			</div>
@@ -73,6 +107,6 @@
 	<script src="js/app.js"></script>
 	<script src="highlight.js/highlight.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<script src="z-modal/z-modal.js"></script>
+	<script src="z-modal/z-modal.min.js"></script>
 </body>
 </html>
