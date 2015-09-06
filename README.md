@@ -2,9 +2,8 @@
 
 This tool allows you to create beautiful & customisable modals easily with callback interactions and only Vanilla Javascript (without any third party libraries).
 
-## Todo
+![Screenshot](/screenshot.jpg)
 
-* explaination on the demopage, this readme && make a blogpost
+[Documentation](http://labo.caradeuc.info/z-modal)
 
-
-![coucou](/screenshot.jpg)
+<!-- [Blog-post]() -->
