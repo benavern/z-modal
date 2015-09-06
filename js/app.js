@@ -2,6 +2,9 @@
   createSocialLinks();
   demo1();
   demo2();
+  demo3();
+  demo4();
+  preloadImages(["img/download_white.png","img/github_white.png"]);
 })();
 
 // social links made easy
@@ -49,6 +52,65 @@ function demo2() {
     buttons : []
   };
   btndemo2.addEventListener('click', function(){
-    demo = new ZMODAL(options2);
+    demo2 = new ZMODAL(options2);
   });
+}
+
+function demo3() {
+  var btndemo3 = document.getElementById('demo3');
+  var htmlContent = document.createElement('p');
+  htmlContent.innerHTML = "This content is an HTML node!";
+  var demo3;
+  var options3 = {
+    title : "Demo 3",
+    content : htmlContent,
+    buttons : [
+      {
+        label: "Cancel",
+        half: true
+      },
+      {
+        label: "Ok",
+        half: true,
+        callback: function (){
+          alert("you are awesome!");
+      }}
+    ]
+  };
+  btndemo3.addEventListener('click', function(){
+    demo3 = new ZMODAL(options3);
+  });
+}
+
+function demo4() {
+  var btndemo4 = document.getElementById("demo4");
+  var demo4;
+  var options4 = {
+    title: "Demo 4",
+    content: "This works too ;-)",
+    buttons: [
+      {
+        label: "Yeah!",
+        half: false
+      }
+    ],
+    autoload: false
+  }
+  btndemo4.addEventListener('click', function(){
+    demo4 = new ZMODAL(options4);
+    demo4.open();
+  });
+}
+
+
+function preloadImages(imgs) {
+  if(imgs && typeof imgs == "object"){
+    var images = [];
+    for(var i=0; i<imgs.length; i++){
+      var img = imgs[i];
+      images[i] = new Image();
+			images[i].src = img;
+    }
+
+  }
 }

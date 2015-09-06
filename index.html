@@ -18,7 +18,6 @@
 	<section>
 		<div class="wrap">
 
-
 			<h1 class="big-title">Z-Modal</h1>
 			<small>05 sept 2015</small>
 			<div class="z-grid">
@@ -28,6 +27,7 @@
 				<div class="z-2">
 					<div class="z-box center-text"><a href="z-modal" class="github">Github</a></div>
 				</div>
+
 			</div>
 
 			<h1>What is z-modal?</h1>
@@ -69,16 +69,28 @@
 			<hr>
 			<h1>Exemples</h1>
 
-			<h3>Without buttons and without closebtn</h3>
-			<button id="demo2">Show me!</button>
+			<h3>Without buttons and without close button</h3>
 			<pre><code class="javascript">var btndemo2 = document.getElementById('demo2');<br>var demo2;<br>var options2 = {<br>  title : "Demo 2",<br>  content : 'You can close the modal by clicking the overlay...',<br>  closeBtn : false,<br>  buttons : []<br>};<br>btndemo2.addEventListener('click', function() {<br>  demo = new ZMODAL(options2);<br>});</code></pre>
+			<button id="demo2">Demo 2</button>
 
-			<h3>with html inside and using open method</h3>
-			<button id="demo3">Show me!</button>
-			<pre><code class="javascript">var coucou;</code></pre>
+			<hr>
 
+			<h3>With html inside and 2 buttons</h3>
+			<pre><code class="javascript">var btndemo3 = document.getElementById('demo3');<br>var htmlContent = document.createElement('p');<br>htmlContent.innerHTML = "This content is an HTML node!";<br>var demo2;<br>var options3 = {<br>  title : "Demo 3",<br>  content : htmlContent,<br>  buttons : [<br>    {<br>      label: "Cancel",<br>      half: true<br>    },<br>    {<br>      label: "Ok",<br>      half: true,<br>      callback: function() {<br>        alert("you are awesome!");<br>      }<br>    }<br>  ]<br>};<br>btndemo3.addEventListener('click', function(){<br>  demo = new ZMODAL(options3);<br>});</code></pre>
+			<button id="demo3">Demo 3</button>
 
+			<br>
 
+			<h3>Full width button and called with "open" method</h3>
+			<pre><code class="javascript">var btndemo4 = document.getElementById("demo4");<br>var demo4;<br>var options4 = {<br>  title: "Demo 4",<br>  content: "This works too ;-)",<br>  buttons: [<br>    {<br>      label: "Yeah!",<br>      half: false<br>    }<br>  ],<br>  autoload: false<br>}<br>btndemo4.addEventListener('click', function(){<br>  demo4 = new ZMODAL(options4);<br>  demo4.open();<br>});</code></pre>
+			<button id="demo4">Demo 4</button>
+
+			<hr>
+
+			<h1>More...</h1>
+			<p>I developed this javascript plugin for me and wanted to share it with you because I think it can be usefull.</p>
+			<p>I don't guarantee that it is perfect but I tried to do my best with only vanilla javascript and basic css</p>
+			<p>Contributions, forks, pull requests, comments... are welcome! </p>
 
 		</div>
 	</section>
