@@ -21,6 +21,7 @@
           <p>Author: <a href="http://caradeuc.info/">Benjamin Caradeuc</a></p>',
       closeBtn : true,
       autoload:true,
+	  onClose:null,
       buttons : [
         { label: "ok", half: false, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
       ]
@@ -29,7 +30,7 @@
     if(arguments[0] && typeof arguments[0] === "object"){
       this.options = __createOptions(defaults, arguments[0]);
     }else{
-        this.options = defaults;
+      this.options = defaults;
     }
     if(this.options.autoload === true){
       this.open.call(this);
@@ -157,9 +158,11 @@
   // close the modal (and delete it ...)
   this.ZMODAL.prototype.close = function(callback) {
     // execute the callback function...
-    if(callback){
+    if(typeof callback === 'function'){
       callback();
-    }	  
+    } else if(typeof this.options.onClose === 'function'){
+      this.options.onClose();
+	}	  
 	  
     // remove the modal
      this.modal.parentNode.removeChild(this.modal);
