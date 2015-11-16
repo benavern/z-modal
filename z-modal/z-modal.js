@@ -156,13 +156,13 @@
 
   // close the modal (and delete it ...)
   this.ZMODAL.prototype.close = function(callback) {
-    // remove the modal
-     this.modal.parentNode.removeChild(this.modal);
-
     // execute the callback function...
     if(callback){
       callback();
-    }
+    }	  
+	  
+    // remove the modal
+     this.modal.parentNode.removeChild(this.modal);
   }
 
 }());
