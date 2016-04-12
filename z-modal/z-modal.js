@@ -23,7 +23,7 @@
       autoload:true,
 	  onClose:null,
       buttons : [
-        { label: "ok", half: false, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
+        { label: "ok", className: '', half: false, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
       ]
     }
 
@@ -107,10 +107,10 @@
       (function(i) {
         var theBtn = _this.options.buttons[i];
         var btn = document.createElement("div");
-        btn.className = "z-modal-btn";
+        btn.classList.add("z-modal-btn",theBtn.className);
         btn.innerHTML = theBtn.label;
         if(theBtn.half === true){
-          btn.className += " z-modal-btn-half";
+          btn.classList.add("z-modal-btn-half");
         }
         // listeners
         __initListener(btn, "click", function(){
