@@ -109,7 +109,7 @@
         var btn = document.createElement("div");
         btn.className = "z-modal-btn";
 		if(theBtn.className && theBtn.className.length > 0)
-			theBtn.classList.add(theBtn.className);
+			btn.classList.add(theBtn.className);
         btn.innerHTML = theBtn.label;
         if(theBtn.half === true){
           btn.classList.add("z-modal-btn-half");
