@@ -172,17 +172,22 @@
 
   // open the modal (create it before ...)
   this.ZMODAL.prototype.open = function() {
-  __build.call(this)
+	if (ZMODAL.__instance) return ZMODAL.__instance;
+	__build.call(this);
+	ZMODAL.__instance = this;
   }
 
   // close the modal (and delete it ...)
   this.ZMODAL.prototype.close = function(callback) {
+	if (!ZMODAL.__instance) return null;
     // execute the callback function...
     if(typeof callback === 'function'){
       callback();
     } else if(typeof this.options.onClose === 'function'){
       this.options.onClose();
 	}	  
+	  
+	ZMODAL.__instance = null;  
 	  
     // remove the modal
      this.modal.parentNode.removeChild(this.modal);
