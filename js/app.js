@@ -67,7 +67,8 @@ function demo3() {
     buttons : [
       {
         label: "Cancel",
-        half: true
+        half: true,
+		className: "default"
       },
       {
         label: "Ok",
