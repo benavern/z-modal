@@ -11,23 +11,26 @@
 	box-sizing: border-box;
 }
 
-/*overlay*/
+/*modal container*/
 .z-modal{
 	position: fixed;
 	top:0;
 	left:0;
 	bottom:0;
 	right:0;
-	background: rgba(0, 0, 0, 0.7);
 	z-index:9999;
+}
+/*overlay*/
+.z-modal.overlay{
 	cursor:pointer;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 /*the box*/
 .z-modal .z-modal-box{
 	background: #fff;
 	min-width:250px;
-	min-height:125px;
+	/*min-height:125px;*/
 	max-width:100%;
 	max-height:100%;
 
