@@ -126,7 +126,7 @@
 		  // closure...
 		  (function(i) {
 			var theBtn = _this.options.buttons[i];
-			var btn = document.createElement("div");
+			var btn = document.createElement("button");
 			btn.className = "z-modal-btn";
 			if(theBtn.className && theBtn.className.length > 0)
 				btn.classList.add(theBtn.className);
