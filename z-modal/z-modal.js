@@ -24,7 +24,7 @@
 	  closeBtn : true,
 	  onClose:null,
       buttons : [
-        { label: "ok", className: '', half: false, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
+          { label: "ok", className: '', half: false, closeOnClick: true, callback:function() { console.log('Thank you for using Z-Modal plugin.'); } }
       ]
     }
 
@@ -95,16 +95,18 @@
 		title.innerHTML = this.options.title;
 		header.appendChild(title);
 
-		// closeBtn
-		this.closeBtn = document.createElement("div");
-		this.closeBtn.className="z-modal-close";
-		this.closeBtn.innerHTML = "&#215;";
-		__initListener(this.closeBtn, "click", function() {
-		_this.close.call(_this);
-		});
-		header.appendChild(this.closeBtn)
+        // closeBtn
+	    if (!!this.options.closeBtn) { //isn't a falsy value @http://bit.do/js-falsy-values
+	        this.closeBtn = document.createElement("div");
+	        this.closeBtn.className = "z-modal-close";
+	        this.closeBtn.innerHTML = "&#215;";
+	        __initListener(this.closeBtn, "click", function() {
+	            _this.close.call(_this);
+	        });
+	        header.appendChild(this.closeBtn)
+	    }
 
-		// append to box
+	    // append to box
 		box.appendChild(header);
 	}
 	 
@@ -135,8 +137,12 @@
 			  btn.classList.add("z-modal-btn-half");
 			}
 			// listeners
-			__initListener(btn, "click", function(){
-			  _this.close.call(_this, _this.options.buttons[i].callback);
+            __initListener(btn, "click", function () {
+                if (theBtn.closeOnClick === false) {
+                    theBtn.callback();
+                } else {
+                    _this.close.call(_this, theBtn.callback);
+                }
 			})
 			footer.appendChild(btn);
 		  })(i);
