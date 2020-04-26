@@ -4,11 +4,11 @@ This tool allows you to create beautiful & customisable modals easily with callb
 
 ![Screenshot](/screenshot.jpg)
 
-[Documentation](http://labo.caradeuc.info/z-modal)
+[Documentation](https://benavern.github.io/z-modal)
 
 ## License
 
-Copyright © 2015 [benavern](http://caradeuc.info)
+Copyright © 2015-2020 [benavern](http://caradeuc.info)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
